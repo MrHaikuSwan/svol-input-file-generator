@@ -1,0 +1,33 @@
+
+TITLE: ADI_svol5
+
+DATA:
+	File = "mplus_mtwins_sahana_thesis06192024.csv";
+	
+VARIABLE:
+
+	Names = idtw twinid famid id ethn0 ethn zyg sex age edu income adi gmvol sgmvol
+  	lhvol rhvol cortvol lhth rhth lhsa rhsa icv vol1-vol68 sa1-sa68 th1-th68
+  	svol1-svol16 thickavg saavg;
+
+	
+	Missing = all (-999);
+
+	Usevar = famid sex ethn age adi svol5;
+
+	Cluster = famid;
+	
+ANALYSIS:
+
+	Type = Complex;
+	Estimator = MLR;
+	
+MODEL:
+
+	svol5 ON adi sex ethn age;
+
+	! Bring the XS into the model	
+	adi sex ethn age;
+	
+OUTPUT: 
+	sampstat cinterval standardized;

@@ -1,0 +1,712 @@
+Mplus VERSION 8.8
+MUTHEN & MUTHEN
+07/25/2024   5:53 PM
+
+INPUT INSTRUCTIONS
+
+
+  TITLE: ADI_svol6
+
+  DATA:
+  	File = "mplus_mtwins_sahana_thesis06192024.csv";
+  	
+  VARIABLE:
+
+  	Names = idtw twinid famid id ethn0 ethn zyg sex age edu income adi gmvol sgmvol
+    	lhvol rhvol cortvol lhth rhth lhsa rhsa icv vol1-vol68 sa1-sa68 th1-th68
+    	svol1-svol16 thickavg saavg;
+
+  	
+  	Missing = all (-999);
+
+  	Usevar = famid sex ethn age adi svol6;
+
+  	Cluster = famid;
+  	
+  ANALYSIS:
+
+  	Type = Complex;
+  	Estimator = MLR;
+  	
+  MODEL:
+
+  	svol6 ON adi sex ethn age;
+
+  	! Bring the XS into the model	
+  	adi sex ethn age;
+  	
+  OUTPUT:
+  	sampstat cinterval standardized;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+ADI_svol6
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         708
+
+Number of dependent variables                                    1
+Number of independent variables                                  4
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   SVOL6
+
+Observed independent variables
+   SEX         ETHN        AGE         ADI
+
+Variables with special functions
+
+  Cluster variable      FAMID
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  mplus_mtwins_sahana_thesis06192024.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             4
+     Number of clusters                        354
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          0.719
+ SEX            0.719         1.000
+ ETHN           0.719         1.000         1.000
+ AGE            0.719         1.000         1.000         1.000
+ ADI            0.702         0.973         0.973         0.973         0.973
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+               -0.007         0.456         0.785        14.141        60.717
+
+
+           Covariances
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          0.998
+ SEX           -0.102         0.248
+ ETHN           0.071         0.013         0.169
+ AGE           -0.004         0.171         0.186         5.003
+ ADI           -2.824        -0.382        -2.526        -0.298       445.422
+
+
+           Correlations
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          1.000
+ SEX           -0.204         1.000
+ ETHN           0.172         0.065         1.000
+ AGE           -0.002         0.154         0.202         1.000
+ ADI           -0.134        -0.036        -0.291        -0.006         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -6182.518
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     SVOL6                 0.000       0.237      -2.497    0.20%      -0.864     -0.306     -0.036
+             509.000       0.998      -0.160       3.076    0.20%       0.225      0.820
+     SEX                   0.456       0.176       0.000   54.38%       0.000      0.000      0.000
+             708.000       0.248      -1.969       1.000   45.62%       1.000      1.000
+     ETHN                  0.785      -1.390       0.000   21.47%       0.000      1.000      1.000
+             708.000       0.169      -0.069       1.000   78.53%       1.000      1.000
+     AGE                  14.141      -0.678       7.000    0.85%      12.000     14.000     14.000
+             708.000       5.003       0.237      19.000    0.28%      15.000     16.000
+     ADI                  60.657       0.033      12.000    0.29%      41.000     54.000     60.000
+             689.000     444.719      -0.901      99.000    0.87%      67.000     80.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.495D-18.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 19, ADI WITH AGE
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       20
+
+Loglikelihood
+
+          H0 Value                       -6182.518
+          H0 Scaling Correction Factor      1.6767
+            for MLR
+          H1 Value                       -6182.518
+          H1 Scaling Correction Factor      1.6767
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   12405.035
+          Bayesian (BIC)                 12496.284
+          Sample-Size Adjusted BIC       12432.780
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0000
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             32.112
+          Degrees of Freedom                     4
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SVOL6    ON
+    ADI               -0.005      0.003     -1.800      0.072
+    SEX               -0.437      0.095     -4.605      0.000
+    ETHN               0.386      0.143      2.696      0.007
+    AGE                0.000      0.025     -0.016      0.987
+
+ ETHN     WITH
+    SEX                0.013      0.009      1.422      0.155
+
+ AGE      WITH
+    SEX                0.171      0.053      3.255      0.001
+    ETHN               0.186      0.054      3.430      0.001
+
+ ADI      WITH
+    SEX               -0.382      0.495     -0.771      0.440
+    ETHN              -2.526      0.565     -4.474      0.000
+    AGE               -0.298      2.804     -0.106      0.915
+
+ Means
+    SEX                0.456      0.023     19.475      0.000
+    ETHN               0.785      0.022     35.934      0.000
+    AGE               14.141      0.119    118.789      0.000
+    ADI               60.717      1.139     53.327      0.000
+
+ Intercepts
+    SVOL6              0.170      0.428      0.397      0.691
+
+ Variances
+    SEX                0.248      0.002    120.936      0.000
+    ETHN               0.169      0.012     13.520      0.000
+    AGE                5.003      0.398     12.561      0.000
+    ADI              445.419     25.097     17.748      0.000
+
+ Residual Variances
+    SVOL6              0.914      0.065     14.089      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.127E-06
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SVOL6    ON
+    ADI               -0.096      0.053     -1.804      0.071
+    SEX               -0.218      0.046     -4.770      0.000
+    ETHN               0.159      0.059      2.710      0.007
+    AGE               -0.001      0.056     -0.016      0.987
+
+ ETHN     WITH
+    SEX                0.065      0.045      1.428      0.153
+
+ AGE      WITH
+    SEX                0.154      0.045      3.412      0.001
+    ETHN               0.202      0.055      3.657      0.000
+
+ ADI      WITH
+    SEX               -0.036      0.047     -0.772      0.440
+    ETHN              -0.291      0.061     -4.759      0.000
+    AGE               -0.006      0.059     -0.106      0.915
+
+ Means
+    SEX                0.916      0.043     21.181      0.000
+    ETHN               1.913      0.124     15.429      0.000
+    AGE                6.322      0.280     22.592      0.000
+    ADI                2.877      0.096     30.036      0.000
+
+ Intercepts
+    SVOL6              0.170      0.428      0.397      0.691
+
+ Variances
+    SEX                1.000      0.000    999.000    999.000
+    ETHN               1.000      0.000    999.000    999.000
+    AGE                1.000      0.000    999.000    999.000
+    ADI                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    SVOL6              0.915      0.026     35.319      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SVOL6    ON
+    ADI               -0.096      0.053     -1.804      0.071
+    SEX               -0.218      0.046     -4.770      0.000
+    ETHN               0.159      0.059      2.710      0.007
+    AGE               -0.001      0.056     -0.016      0.987
+
+ ETHN     WITH
+    SEX                0.065      0.045      1.428      0.153
+
+ AGE      WITH
+    SEX                0.154      0.045      3.412      0.001
+    ETHN               0.202      0.055      3.657      0.000
+
+ ADI      WITH
+    SEX               -0.036      0.047     -0.772      0.440
+    ETHN              -0.291      0.061     -4.759      0.000
+    AGE               -0.006      0.059     -0.106      0.915
+
+ Means
+    SEX                0.916      0.043     21.181      0.000
+    ETHN               1.913      0.124     15.429      0.000
+    AGE                6.322      0.280     22.592      0.000
+    ADI                2.877      0.096     30.036      0.000
+
+ Intercepts
+    SVOL6              0.170      0.428      0.397      0.691
+
+ Variances
+    SEX                1.000      0.000    999.000    999.000
+    ETHN               1.000      0.000    999.000    999.000
+    AGE                1.000      0.000    999.000    999.000
+    ADI                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    SVOL6              0.915      0.026     35.319      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SVOL6    ON
+    ADI               -0.005      0.003     -1.800      0.072
+    SEX               -0.437      0.095     -4.605      0.000
+    ETHN               0.386      0.143      2.696      0.007
+    AGE                0.000      0.025     -0.016      0.987
+
+ ETHN     WITH
+    SEX                0.013      0.009      1.422      0.155
+
+ AGE      WITH
+    SEX                0.171      0.053      3.255      0.001
+    ETHN               0.186      0.054      3.430      0.001
+
+ ADI      WITH
+    SEX               -0.382      0.495     -0.771      0.440
+    ETHN              -2.526      0.565     -4.474      0.000
+    AGE               -0.298      2.804     -0.106      0.915
+
+ Means
+    SEX                0.456      0.023     19.475      0.000
+    ETHN               0.785      0.022     35.934      0.000
+    AGE               14.141      0.119    118.789      0.000
+    ADI               60.717      1.139     53.327      0.000
+
+ Intercepts
+    SVOL6              0.170      0.428      0.397      0.691
+
+ Variances
+    SEX                0.248      0.002    120.936      0.000
+    ETHN               0.169      0.012     13.520      0.000
+    AGE                5.003      0.398     12.561      0.000
+    ADI              445.419     25.097     17.748      0.000
+
+ Residual Variances
+    SVOL6              0.914      0.065     14.089      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    SVOL6              0.085      0.026      3.266      0.001
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SVOL6    ON
+    ADI             -0.011      -0.009      -0.009      -0.005       0.000       0.000       0.002
+    SEX             -0.682      -0.623      -0.593      -0.437      -0.281      -0.251      -0.193
+    ETHN             0.017       0.105       0.150       0.386       0.621       0.666       0.754
+    AGE             -0.065      -0.049      -0.041       0.000       0.041       0.048       0.064
+
+ ETHN     WITH
+    SEX             -0.011      -0.005      -0.002       0.013       0.028       0.031       0.037
+
+ AGE      WITH
+    SEX              0.036       0.068       0.085       0.171       0.258       0.275       0.307
+    ETHN             0.046       0.080       0.097       0.186       0.275       0.292       0.325
+
+ ADI      WITH
+    SEX             -1.656      -1.351      -1.195      -0.382       0.432       0.588       0.893
+    ETHN            -3.980      -3.632      -3.454      -2.526      -1.597      -1.419      -1.071
+    AGE             -7.520      -5.794      -4.910      -0.298       4.315       5.198       6.925
+
+ Means
+    SEX              0.396       0.410       0.418       0.456       0.495       0.502       0.517
+    ETHN             0.729       0.742       0.749       0.785       0.821       0.828       0.842
+    AGE             13.835      13.908      13.945      14.141      14.337      14.375      14.448
+    ADI             57.784      58.485      58.844      60.717      62.590      62.948      63.649
+
+ Intercepts
+    SVOL6           -0.932      -0.668      -0.534       0.170       0.873       1.008       1.271
+
+ Variances
+    SEX              0.243       0.244       0.245       0.248       0.251       0.252       0.253
+    ETHN             0.136       0.144       0.148       0.169       0.189       0.193       0.201
+    AGE              3.977       4.222       4.347       5.003       5.658       5.783       6.028
+    ADI            380.774     396.229     404.134     445.419     486.705     494.610     510.065
+
+ Residual Variances
+    SVOL6            0.747       0.786       0.807       0.914       1.020       1.041       1.081
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SVOL6    ON
+    ADI             -0.232      -0.200      -0.183      -0.096      -0.008       0.008       0.041
+    SEX             -0.336      -0.307      -0.293      -0.218      -0.143      -0.128      -0.100
+    ETHN             0.008       0.044       0.062       0.159       0.255       0.273       0.309
+    AGE             -0.145      -0.110      -0.093      -0.001       0.091       0.108       0.143
+
+ ETHN     WITH
+    SEX             -0.052      -0.024      -0.010       0.065       0.139       0.153       0.181
+
+ AGE      WITH
+    SEX              0.038       0.065       0.080       0.154       0.228       0.242       0.270
+    ETHN             0.060       0.094       0.111       0.202       0.293       0.311       0.345
+
+ ADI      WITH
+    SEX             -0.157      -0.128      -0.114      -0.036       0.041       0.056       0.085
+    ETHN            -0.449      -0.411      -0.392      -0.291      -0.191      -0.171      -0.134
+    AGE             -0.159      -0.123      -0.104      -0.006       0.091       0.110       0.147
+
+ Means
+    SEX              0.805       0.831       0.845       0.916       0.987       1.001       1.027
+    ETHN             1.593       1.670       1.709       1.913       2.116       2.156       2.232
+    AGE              5.602       5.774       5.862       6.322       6.783       6.871       7.043
+    ADI              2.630       2.689       2.719       2.877       3.034       3.065       3.124
+
+ Intercepts
+    SVOL6           -0.932      -0.668      -0.534       0.170       0.874       1.008       1.272
+
+ Variances
+    SEX              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ETHN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    AGE              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ADI              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    SVOL6            0.849       0.865       0.873       0.915       0.958       0.966       0.982
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SVOL6    ON
+    ADI             -0.232      -0.200      -0.183      -0.096      -0.008       0.008       0.041
+    SEX             -0.336      -0.307      -0.293      -0.218      -0.143      -0.128      -0.100
+    ETHN             0.008       0.044       0.062       0.159       0.255       0.273       0.309
+    AGE             -0.145      -0.110      -0.093      -0.001       0.091       0.108       0.143
+
+ ETHN     WITH
+    SEX             -0.052      -0.024      -0.010       0.065       0.139       0.153       0.181
+
+ AGE      WITH
+    SEX              0.038       0.065       0.080       0.154       0.228       0.242       0.270
+    ETHN             0.060       0.094       0.111       0.202       0.293       0.311       0.345
+
+ ADI      WITH
+    SEX             -0.157      -0.128      -0.114      -0.036       0.041       0.056       0.085
+    ETHN            -0.449      -0.411      -0.392      -0.291      -0.191      -0.171      -0.134
+    AGE             -0.159      -0.123      -0.104      -0.006       0.091       0.110       0.147
+
+ Means
+    SEX              0.805       0.831       0.845       0.916       0.987       1.001       1.027
+    ETHN             1.593       1.670       1.709       1.913       2.116       2.156       2.232
+    AGE              5.602       5.774       5.862       6.322       6.783       6.871       7.043
+    ADI              2.630       2.689       2.719       2.877       3.034       3.065       3.124
+
+ Intercepts
+    SVOL6           -0.932      -0.668      -0.534       0.170       0.874       1.008       1.272
+
+ Variances
+    SEX              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ETHN             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    AGE              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ADI              1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    SVOL6            0.849       0.865       0.873       0.915       0.958       0.966       0.982
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SVOL6    ON
+    ADI             -0.011      -0.009      -0.009      -0.005       0.000       0.000       0.002
+    SEX             -0.682      -0.623      -0.593      -0.437      -0.281      -0.251      -0.193
+    ETHN             0.017       0.105       0.150       0.386       0.621       0.666       0.754
+    AGE             -0.065      -0.049      -0.041       0.000       0.041       0.048       0.064
+
+ ETHN     WITH
+    SEX             -0.011      -0.005      -0.002       0.013       0.028       0.031       0.037
+
+ AGE      WITH
+    SEX              0.036       0.068       0.085       0.171       0.258       0.275       0.307
+    ETHN             0.046       0.080       0.097       0.186       0.275       0.292       0.325
+
+ ADI      WITH
+    SEX             -1.656      -1.351      -1.195      -0.382       0.432       0.588       0.893
+    ETHN            -3.980      -3.632      -3.454      -2.526      -1.597      -1.419      -1.071
+    AGE             -7.520      -5.794      -4.910      -0.298       4.315       5.198       6.925
+
+ Means
+    SEX              0.396       0.410       0.418       0.456       0.495       0.502       0.517
+    ETHN             0.729       0.742       0.749       0.785       0.821       0.828       0.842
+    AGE             13.835      13.908      13.945      14.141      14.337      14.375      14.448
+    ADI             57.784      58.485      58.844      60.717      62.590      62.948      63.649
+
+ Intercepts
+    SVOL6           -0.932      -0.668      -0.534       0.170       0.873       1.008       1.271
+
+ Variances
+    SEX              0.243       0.244       0.245       0.248       0.251       0.252       0.253
+    ETHN             0.136       0.144       0.148       0.169       0.189       0.193       0.201
+    AGE              3.977       4.222       4.347       5.003       5.658       5.783       6.028
+    ADI            380.774     396.229     404.134     445.419     486.705     494.610     510.065
+
+ Residual Variances
+    SVOL6            0.747       0.786       0.807       0.914       1.020       1.041       1.081
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+                  0             0             0             0             0
+
+
+           LAMBDA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6              0             0             0             0             0
+ SEX                0             0             0             0             0
+ ETHN               0             0             0             0             0
+ AGE                0             0             0             0             0
+ ADI                0             0             0             0             0
+
+
+           THETA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6              0
+ SEX                0             0
+ ETHN               0             0             0
+ AGE                0             0             0             0
+ ADI                0             0             0             0             0
+
+
+           ALPHA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+                  1             2             3             4             5
+
+
+           BETA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6              0             6             7             8             9
+ SEX                0             0             0             0             0
+ ETHN               0             0             0             0             0
+ AGE                0             0             0             0             0
+ ADI                0             0             0             0             0
+
+
+           PSI
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6             10
+ SEX                0            11
+ ETHN               0            12            13
+ AGE                0            14            15            16
+ ADI                0            17            18            19            20
+
+
+     STARTING VALUES
+
+
+           NU
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          1.000         0.000         0.000         0.000         0.000
+ SEX            0.000         1.000         0.000         0.000         0.000
+ ETHN           0.000         0.000         1.000         0.000         0.000
+ AGE            0.000         0.000         0.000         1.000         0.000
+ ADI            0.000         0.000         0.000         0.000         1.000
+
+
+           THETA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          0.000
+ SEX            0.000         0.000
+ ETHN           0.000         0.000         0.000
+ AGE            0.000         0.000         0.000         0.000
+ ADI            0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+                0.000         0.456         0.785        14.141        60.657
+
+
+           BETA
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          0.000         0.000         0.000         0.000         0.000
+ SEX            0.000         0.000         0.000         0.000         0.000
+ ETHN           0.000         0.000         0.000         0.000         0.000
+ AGE            0.000         0.000         0.000         0.000         0.000
+ ADI            0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              SVOL6         SEX           ETHN          AGE           ADI
+              ________      ________      ________      ________      ________
+ SVOL6          0.499
+ SEX            0.000         0.124
+ ETHN           0.000         0.000         0.084
+ AGE            0.000         0.000         0.000         2.501
+ ADI            0.000         0.000         0.000         0.000       222.359
+
+
+     Beginning Time:  17:53:28
+        Ending Time:  17:53:28
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2022 Muthen & Muthen
