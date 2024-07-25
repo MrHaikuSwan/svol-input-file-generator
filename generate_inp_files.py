@@ -1,6 +1,7 @@
-# Make sure this directory exists when you run the script
-# Make sure the variable you put in here ends with a slash
-OUTPUT_DIR = 'generated_input_files/'
+# NOTE: This is not required, but is here if you want it
+# Make sure this folder exists when you run the script
+# Make sure the variable you put in here ends with a slash if you put a folder name
+OUTPUT_DIR = ''
 
 INP_VARS = [
   'svol1',
